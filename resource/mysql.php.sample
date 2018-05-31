@@ -1,0 +1,4 @@
+<?php
+$db_host_super = "mysql:host=localhost:3306;dbname=kinensai;charset=utf8mb4";
+$db_user = "root";
+$db_password = "password";

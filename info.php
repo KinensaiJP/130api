@@ -11,7 +11,7 @@ $return_data = array(
 				'end' => date(DATE_ATOM, mktime(16, 0, 0, 9, 29, 2018))
 			),
 			array(
-				'start' => date(DATE_ATOM, mktime(9, 0, 0, 9, 30	, 2018)),
+				'start' => date(DATE_ATOM, mktime(9, 0, 0, 9, 30, 2018)),
 				'end' => date(DATE_ATOM, mktime(15, 0, 0, 9, 30, 2018))
 			),
 		),
