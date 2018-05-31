@@ -1,0 +1,7 @@
+== KinensaiJP api server
+
+kinensaijp api server
+
+=== how to use
+
+clone this repo.
