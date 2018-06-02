@@ -27,11 +27,9 @@ Ubuntu::
 === うごかすには(windows)
 
 . リポジトリをクローンする
-[source, sh]
-    git clone https://github.com/KinensaiJP/api
-
-. nginxのコンフィグのroot,cgiの設定などを適宜変更
-
-. php.iniのpdo_mysqlの有効化をする
++
+----
+git clone https://github.com/KinensaiJP/api
+----
 
 . resource/mysql.php.sampleを参考に自分の環境の変数をresource/mysql.phpに用意
