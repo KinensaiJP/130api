@@ -8,13 +8,14 @@ try {
     die($e->getMessage());
 }
 
-$count = $pdo->query('SELECT * FROM `count`');
+$ClassProject = $pdo->query('SELECT * FROM `ClassProject`');
 
 header("Content-Type: application/json; charset=utf-8");
 
-foreach($count as $row) {
+foreach($ClassProject as $row) {
     echo json_encode($row);
 }
 
 exit();
 ?>
+
