@@ -8,18 +8,17 @@ try {
     die($e->getMessage());
 }
 
-$ClassProject = $pdo->query('SELECT className, title, description, format, imageURL FROM `ClassProject`');
+$StageTT = $pdo->query('SELECT ID, Name, Member, Time FROM `StageTT`');
 
 
 header("Content-Type: application/json; charset=utf-8");
 
 $cnt = 0;
-foreach($ClassProject as $row) {
+foreach($StageTT as $row) {
     $cnt++;
     echo json_encode($row);
-    if (count($ClassProject) == $cnt) echo ",";
+    if (count($StageTT) == $cnt) echo ",";
 }
 
 exit();
 ?>
-
