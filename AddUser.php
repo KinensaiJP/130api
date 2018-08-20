@@ -1,7 +1,6 @@
 <?php
 require_once __DIR__ . '/resource/mysql.php';
 $from = $_POST['from'];
-$date = date('Y/m/d H:i:s');
 if ($from == 'app'){
     try {
         $pdo = new PDO($db_host_super, $db_user, $db_password, [PDO::ATTR_EMULATE_PREPARES => false, PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC]);
@@ -19,7 +18,7 @@ if ($from == 'app'){
         echo json_encode($row);
     }
     $user_length += 1;
-    $pdo->query("INSERT INTO User (ID, AddedDate) VALUES ($user_length, '$date')");
+    $pdo->query("INSERT INTO User (ID, AddedDate) VALUES ($user_length, now())");
 
 }
 exit();
