@@ -15,9 +15,16 @@ if ($from == 'app'){
       //todo  
         die($e->getMessage());
     }
-    
-    $tmp = $pdo->query("UPDATE user SET Anke1 = $a1, Anke1_5 = '$a1_5', Anke2 = '$a2', Anke3 = '$a3', Anke4 = $a4 WHERE ID = $ID");
-    
+
+    $tmp = $pdo->prepare("UPDATE user SET Anke1 = ?, Anke1_5 = ?, Anke2 = ?, Anke3 =  ?, Anke4 = ? WHERE ID = ?");
+    $tmp->bindValue(1,$a1,PDO::PARAM_INT);
+    $tmp->bindValue(2,$a1_5,PDO::PARAM_STR);
+    $tmp->bindValue(3,$a2,PDO::PARAM_STR);
+    $tmp->bindValue(4,$a3,PDO::PARAM_STR);
+    $tmp->bindValue(5,$a4,PDO::PARAM_INT);
+    $tmp->bindValue(6,$ID,PDO::PARAM_STR);
+    $tmp->execute();
+
     echo "UPDATE user SET Anke1 = $a1, Anke1_5 = \'$a1_5\', Anke2 = \'$a2\', Anke3 = \'$a3\', Anke4 = $a4 WHERE ID = $ID";
     }
 exit();
