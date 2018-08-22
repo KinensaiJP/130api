@@ -18,7 +18,9 @@ if ($from == 'app'){
         echo json_encode($row);
     }
     $user_length += 1;
-    $pdo->query("INSERT INTO User (ID, AddedDate) VALUES ($user_length, now())");
 
+    $te = $pdo->prepare("INSERT INTO User (ID, AddedDate) VALUES ( ?, now())");
+    $te->bindValue(1,$user_length,PDO::PARAM_INT);
+    $te->execute();
 }
 exit();
