@@ -8,7 +8,10 @@ try {
     die($e->getMessage());
 }
 
-$StageTT = $pdo->query('SELECT ID, name, member, DATE_FORMAT(time, \'%Y%m%d%H%i%S\') AS ntime, DATE_FORMAT(time, \'%m-%d %H:%i\') AS dtime, place FROM tt WHERE place = "'."$place".'"');
+$StageTT = $pdo->prepare('SELECT ID, name, member, DATE_FORMAT(time, \'%Y%m%d%H%i%S\') AS ntime, DATE_FORMAT(time, \'%m-%d %H:%i\') AS dtime, place FROM tt WHERE place = ? ');
+$StageTT->bindValue(1,$place,PDO::PARAM_STR);
+$StageTT->execute();
+
 header("Content-Type: application/json; charset=utf-8");
 $cnt = 0;
 
