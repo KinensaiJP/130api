@@ -8,7 +8,7 @@ try {
     die($e->getMessage());
 }
 
-$ClassProject = $pdo->query('SELECT className, title, description, format, imageURL, TT FROM `ClassProject`');
+$ClassProject = $pdo->query('SELECT className, title, description, format, imageURL, TT, latency FROM `ClassProject`');
 
 
 header("Content-Type: application/json; charset=utf-8");
