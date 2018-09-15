@@ -15,9 +15,9 @@ header("Content-Type: application/json; charset=utf-8");
 
 $cnt = 0;
 foreach($ClassProject as $row) {
-    $cnt++;
+    if($cnt != 0) echo ",";
     echo json_encode($row);
-    if (count($ClassProject) == $cnt) echo ",";
+    $cnt++;
 }
 
 exit();
