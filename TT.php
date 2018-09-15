@@ -8,7 +8,7 @@ try {
     die($e->getMessage());
 }
 
-$StageTT = $pdo->prepare('SELECT ID, name, member, DATE_FORMAT(time, \'%Y%m%d%H%i%S\') AS ntime, DATE_FORMAT(time, \'%m-%d %H:%i\') AS dtime, place, imageURL FROM tt WHERE place = ? ');
+$StageTT = $pdo->prepare('SELECT ID, name, member, DATE_FORMAT(time, \'%Y%m%d%H%i%S\') AS ntime, DATE_FORMAT(time, \'%m-%d %H:%i\') AS dtime, place, iventName, imageURL FROM tt WHERE place = ? ');
 $StageTT->bindValue(1,$place,PDO::PARAM_STR);
 $StageTT->execute();
 
