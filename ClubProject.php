@@ -8,7 +8,7 @@ try {
     die($e->getMessage());
 }
 
-$ClubProject = $pdo->query('SELECT ID, Name AS name, Place AS place, Description AS description, Time AS tt FROM `ClubProject`');
+$ClubProject = $pdo->query('SELECT ID, Name AS name, Place AS place, Description AS description, Time AS tt FROM `clubproject`');
 
 
 header("Content-Type: application/json; charset=utf-8");

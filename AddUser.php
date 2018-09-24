@@ -9,7 +9,7 @@ if ($from == 'app'){
         die($e->getMessage());
     }
     
-    $tmp = $pdo->query('SELECT COUNT(*) FROM User');
+    $tmp = $pdo->query('SELECT COUNT(*) FROM user');
     
     header("Content-Type: application/json; charset=utf-8");
     
@@ -19,7 +19,7 @@ if ($from == 'app'){
     }
     $user_length += 1;
 
-    $te = $pdo->prepare("INSERT INTO User (ID, AddedDate) VALUES ( ?, now())");
+    $te = $pdo->prepare("INSERT INTO user (ID, AddedDate) VALUES ( ?, now())");
     $te->bindValue(1,$user_length,PDO::PARAM_INT);
     $te->execute();
 }
